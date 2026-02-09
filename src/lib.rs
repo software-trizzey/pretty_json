@@ -1,19 +1,24 @@
-use serde_json::{Result, Value};
+use std::{fs, path::Path};
 
-pub fn prettify_json() -> Result<()> {
-    let data: &str = r#"
-        {
-            "name": "John Doe",
-            "age": 43,
-            "phones": [
-                "+44 1234567",
-                "+44 2345678"
-            ]
-        }"#;
+use serde_json::Value;
 
-    let v: Value = serde_json::from_str(data)?;
+fn read_file(filepath: &Path) -> std::io::Result<String> {
+    fs::read_to_string(filepath)
+}
 
-    println!("Here's {}'s cell #{}", v["name"], v["phones"][0]);
+fn parse_contents(contents: String) -> serde_json::Result<Value> {
+    let v: Value = serde_json::from_str(&contents)?;
+    Ok(v)
+}
 
-    Ok(())
+pub fn prettify_json(filepath: &Path) -> std::result::Result<String, String> {
+    let file = read_file(filepath).unwrap();
+    let v: Value = parse_contents(file).unwrap();
+    let prettified = format!("{:#}", v);
+
+    Ok(prettified)
+}
+
+pub fn write_file(filepath: &Path, json: String) {
+    fs::write(filepath, json).unwrap()
 }
