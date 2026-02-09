@@ -1,7 +1,10 @@
 # Pretty JSON
 
-Goal: build a simple CLI tool that accepts a JSON filepath and then formats its contents.
+A simple CLI tool that accepts a JSON filepath and formats its contents.
+
+Importantly this tool doesn't validate JSON files and will fail when parsing invalid input.
 
 Features:
-- only accept json files
-- will override file contents by default. can add support for shortcut (`-o`) that specifies output path instead. 
+- Override file contents by default
+- Supports shortcut `--ouput|-o` that outputs changes to new file
+- Select pretty or compact output via shortcut `--format|-f`; defaults to `pretty`
