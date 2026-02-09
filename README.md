@@ -1,4 +1,5 @@
 # Pretty JSON
+[Pretty json](/pretty_json_demo.png)
 
 A simple CLI tool that accepts a JSON filepath and formats its contents.
 
@@ -40,3 +41,18 @@ Then you can run the tool as a binary like
 ```bash
 ./target/release/pretty_json data/test.json --output data/foo_bar.json
 ```
+
+Installing the tool via Cargo makes it easy to run the binary like any other CLI tool.
+```bash
+cargo install --path .
+pj data/test.json
+```
+
+Note: pj == pretty_json. i prefer a shorthand when typing. This can be changed to anything else via bin in Cargo.toml
+
+```toml
+[[bin]]
+name = "pj" # pretty_json | pjson | etc.
+path = "src/main.rs"
+```
+
