@@ -1,5 +1,5 @@
 # Pretty JSON
-[Pretty json](/pretty_json_demo.png)
+![Pretty json](/pretty_json_demo.png)
 
 A simple CLI tool that accepts a JSON filepath and formats its contents.
 
