@@ -1,0 +1,1 @@
+{"str":"hello\nworld","emptyStr":"","int":0,"neg":-1,"float":3.14159,"exp":1e-9,"boolT":true,"boolF":false,"nil":null,"arr":[1,"two",false,null,{"nested":"obj","nestedArr":[0,1.5e2,true,null,""]}],"obj":{"k":"v","emptyArr":[],"emptyObj":{}}}
