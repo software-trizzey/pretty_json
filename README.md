@@ -48,7 +48,7 @@ cargo install --path .
 pj data/test.json
 ```
 
-Note: pj == pretty_json. i prefer a shorthand when typing. This can be changed to anything else via bin in Cargo.toml
+Note: pj == pretty_json. i prefer a shorthand when typing. This can be changed to anything else via bin in [Cargo.toml](/Cargo.toml)
 
 ```toml
 [[bin]]
